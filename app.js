@@ -9,7 +9,7 @@ const bcrypt = require('bcrypt');
 const logger = require('morgan');
 const PORT = process.env.PORT || 3000;
 const http = require('http');
-//const db;
+const db = require('./models');
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -28,26 +28,26 @@ app.use(session({
     },
 }));
 
-
+db.Appetizers.sync();
 
 app.get('/', (req, res) => {
     res.render('index.ejs');
 });
 
 app.get('/appetizers', (req, res) => {
-    res.render('appetizers.ejs');
-});
-
-app.get('/pizzas', (req, res) => {
-    res.render('pizzas.ejs');
+    db.Appetizers.findAll({attributes: ['item', 'description', 'price']}).then(appetizerList => {
+        res.render('appetizers.ejs', {
+            appetizer: appetizerList
+        });
+    });
 });
 
 app.get('/desserts', (req, res) => {
     res.render('desserts.ejs');
-});
+})
 
-
+app.get('/pizzas', (req, res) => {
+    res.render('pizzas.ejs');
+})
 
 app.listen(PORT, () => console.log(`Listening on: http://localhost:${PORT}`));
-
-//Hello from Tracy!

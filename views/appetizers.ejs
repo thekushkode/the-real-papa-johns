@@ -1,7 +1,29 @@
 <%- include('partials/aux-start.ejs') %>
 
-
-
+<div class="row">
+    <% appetizer.forEach(item => { %>
+    
+    <div class="container d-flex col-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="card">
+            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
+            <div class="card-body">
+    
+                <!-- Title -->
+                <h4 class="card-title"><a><%= item.item %></a></h4>
+                <!-- Text -->
+                <p class="card-text"><%= item.description %></p>
+                <p class="card-text">$<%= item.price %></p>
+                <!-- Button -->
+                <a href="#" class="btn btn-primary">Add</a>
+                <a href="#" class="btn btn-primary">Remove</a>
+    
+            </div>
+    
+        </div>
+    </div>
+    
+    <% }) %>
+</div>
 
 
 <%- include('partials/page-end.ejs') %>

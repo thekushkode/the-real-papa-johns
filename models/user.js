@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     ccCode: DataTypes.STRING
   }, {});
   Users.associate = function(models) {
-    Users.hasMany(models.Orders, {foreignKey: 'customerId'});
+    Users.hasMany(models.Orders, {foreignKey: 'customerId', as: 'user'});
   };
   return Users;
 };
