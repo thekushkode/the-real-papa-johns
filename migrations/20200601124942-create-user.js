@@ -12,19 +12,19 @@ module.exports = {
         type: Sequelize.STRING
       },
       phone: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       address: {
         type: Sequelize.STRING
       },
       ccNum: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       ccExp: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       ccCode: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
