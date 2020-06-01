@@ -32,7 +32,6 @@ app.use(session({
 
 app.get('/', (req, res) => {
     res.render('index.ejs');
-    // res.send('hello');
 });
 
 
