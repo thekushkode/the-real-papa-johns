@@ -34,6 +34,18 @@ app.get('/', (req, res) => {
     res.render('index.ejs');
 });
 
+app.get('/appetizers', (req, res) => {
+    res.render('appetizers.ejs');
+});
+
+app.get('/pizzas', (req, res) => {
+    res.render('pizzas.ejs');
+});
+
+app.get('/desserts', (req, res) => {
+    res.render('desserts.ejs');
+});
+
 
 
 app.listen(PORT, () => console.log(`Listening on: http://localhost:${PORT}`));
