@@ -9,7 +9,7 @@ const bcrypt = require('bcrypt');
 const logger = require('morgan');
 const PORT = process.env.PORT || 3000;
 const http = require('http');
-//const db;
+const db = require('./models');
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -34,8 +34,13 @@ app.get('/', (req, res) => {
     res.render('index.ejs');
 });
 
+app.get('/appetizers', (req, res) => {
+    db.Appetizers.findAll ()
+                .then (appetizerList => {
+                    res.render('appetizers.ejs', {data:appetizerList});
+                });
+});
+
 
 
 app.listen(PORT, () => console.log(`Listening on: http://localhost:${PORT}`));
-
-//Hello from Tracy!
