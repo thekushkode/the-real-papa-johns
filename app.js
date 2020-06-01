@@ -14,6 +14,7 @@ const http = require('http');
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
+app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -30,8 +31,8 @@ app.use(session({
 
 
 app.get('/', (req, res) => {
-    //res.render('index.ejs');
-    res.send('hello');
+    res.render('index.ejs');
+    // res.send('hello');
 });
 
 
