@@ -46,12 +46,10 @@ app.get('/appetizers', (req, res) => {
 });
 
 app.post('/appetizers', (req, res) => {
-    // req.session.appetizers.push(req.body.name);
     console.log(req.session);
     const appetizers = req.session.appetizers || [];
     appetizers.push(req.body);
     req.session.appetizers = appetizers;
-    // req.session.save();
     res.redirect('/appetizers');
     console.log(req.session);
 });
@@ -61,12 +59,10 @@ app.get('/desserts', (req, res) => {
 });
 
 app.post('/desserts', (req, res) => {
-    // req.session.pizzas.push(req.body.name);
     console.log(req.session);
     const desserts = req.session.desserts || [];
     desserts.push(req.body);
     req.session.desserts = desserts;
-    // req.session.save();
     res.redirect('/desserts');
     console.log(req.session);
 });
@@ -76,12 +72,10 @@ app.get('/pizzas', (req, res) => {
 });
 
 app.post('/pizzas', (req, res) => {
-    // req.session.pizzas.push(req.body.name);
     console.log(req.session);
     const pizzas = req.session.pizzas || [];
     pizzas.push(req.body);
     req.session.pizzas = pizzas;
-    // req.session.save();
     res.redirect('/pizzas');
     console.log(req.session);
 });
@@ -111,8 +105,6 @@ app.post('/signup', (req, res) => {
     }).then(user => {
         console.log(user);
     });
-    // console.log(req.body);
-    // res.send('signup');
 });
 
 app.post('/summary', (req, res) => {
