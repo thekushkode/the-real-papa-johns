@@ -22,19 +22,19 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-const store = new SequelizeStore({ db: db.sequelize })
+const store = new SequelizeStore({ db: db.sequelize });
 app.use(session({
     secret: 'supersecret',
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie: {
-        secure: true,
+        secure: false,
         maxAge: 15811200000,
     },
     store: store,
 }));
 store.sync();
-// db.Appetizers.sync();
+
 
 app.get('/', (req, res) => {
     res.render('index.ejs');
@@ -45,8 +45,30 @@ app.get('/appetizers', (req, res) => {
     res.render('appetizers.ejs');
 });
 
+app.post('/appetizers', (req, res) => {
+    // req.session.appetizers.push(req.body.name);
+    console.log(req.session);
+    const appetizers = req.session.appetizers || [];
+    appetizers.push(req.body);
+    req.session.appetizers = appetizers;
+    // req.session.save();
+    res.redirect('/appetizers');
+    console.log(req.session);
+});
+
 app.get('/desserts', (req, res) => {
     res.render('desserts.ejs');
+});
+
+app.post('/desserts', (req, res) => {
+    // req.session.pizzas.push(req.body.name);
+    console.log(req.session);
+    const desserts = req.session.desserts || [];
+    desserts.push(req.body);
+    req.session.desserts = desserts;
+    // req.session.save();
+    res.redirect('/desserts');
+    console.log(req.session);
 });
 
 app.get('/pizzas', (req, res) => {
@@ -54,22 +76,38 @@ app.get('/pizzas', (req, res) => {
 });
 
 app.post('/pizzas', (req, res) => {
-    if (req.session.pizza) {
-        req.session.pizza.push(req.body);
-    } else {
-        req.session.pizza = [req.body];
-    }
-    res.redirect('/pizza');
+    // req.session.pizzas.push(req.body.name);
+    console.log(req.session);
+    const pizzas = req.session.pizzas || [];
+    pizzas.push(req.body);
+    req.session.pizzas = pizzas;
+    // req.session.save();
+    res.redirect('/pizzas');
+    console.log(req.session);
 });
 
 app.get('/login', (req, res) => {
     res.render('login_logout.ejs');
 });
 
+app.get('/summary', (req, res) => {
+    res.render('order_summary.ejs', {
+        pizzas: req.session.pizzas,
+        desserts: req.session.desserts,
+        appetizers: req.session.appetizers,
+    });
+});
+
 app.post('/signup', (req, res) => {
     db.Users.create({
         name: req.body.name,
-        phone: req.body.phone
+        email: req.body.email,
+        address: req.body.address,
+        phone: req.body.phone,
+        ccNum: req.body.ccNum,
+        ccExp: req.body.ccExp,
+        ccCode: req.body.ccCode,
+        password: req.body.password
     }).then(user => {
         console.log(user);
     });
@@ -77,6 +115,9 @@ app.post('/signup', (req, res) => {
     // res.send('signup');
 });
 
-
+app.post('/summary', (req, res) => {
+    console.log(req.session);
+    res.send(req.session);
+})
 
 app.listen(PORT, () => console.log(`Listening on: http://localhost:${PORT}`));

@@ -1,5 +1,30 @@
 <%- include('partials/aux-start.ejs') %>
 
-
+<div>
+    <h1>Order Summary</h1>
+    <div>
+        <% pizzas.forEach(pizza => { %>
+            <h4><%= pizza.name %></h4>
+            <h4><%= pizza.description %></h4>
+            <h4><%= pizza.price %></h4>
+        <% }) %> 
+    </div>
+    <div>
+        <% appetizers.forEach(app => { %>
+            <h4><%= app.name %></h4>
+            <h4><%= app.description %></h4>
+            <h4><%= app.price %></h4>
+        <% }) %> 
+    </div>
+    <div>
+        <% desserts.forEach(dessert => { %>
+            <h4><%= dessert.name %></h4>
+            <h4><%= dessert.description %></h4>
+            <h4><%= dessert.price %></h4>
+        <% }) %> 
+    </div>
+    <hr>
+    <h3>Order Total:</h3>
+</div>
 
 <%- include('partials/page-end.ejs') %>
