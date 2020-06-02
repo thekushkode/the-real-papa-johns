@@ -4,7 +4,7 @@
 
     <div class="row">
 
-        <div class="container d-flex col-12 col-sm-6 col-md-3 col-lg-3 m-4">
+        <div class="container d-flex col-12 col-sm-6 col-md-4 col-lg-4 m-4">
             <div class="card">
                 <img class="card-img-top" src="images/cheese_pizza.jpeg" width=18rem alt="Card image cap">
                 <div class="card-body">
@@ -17,13 +17,13 @@
                     <p class="card-text">$9.99</p>
 
                     <form action="/pizzas" method="POST">
-                        <a href="#" class="btn btn-primary">Add</a>
+                        <button type="submit" class="btn btn-primary">Add</button>
                         <input type="hidden" name="name" value="3-Cheese">
                         <input type="hidden" name="description" value="cheesey goodness">
                         <input type="hidden" name="price" value="$9.99">
                     </form>
                     <form action="" method="">
-                        <a href="#" class="btn btn-primary">Remove</a>
+                        <button type="submit" class="btn btn-primary">Remove</button>
                     </form>
                     
 
@@ -31,7 +31,7 @@
 
             </div>
         </div>
-        <div class="container d-flex col-12 col-sm-6 col-md-3 col-lg-3 m-4">
+        <div class="container d-flex col-12 col-sm-6 col-md-4 col-lg-4 m-4">
             <div class="card">
                 <img class="card-img-top" src="images/pepperoni.jpeg" width=18rem alt="Card image cap">
                 <div class="card-body">
@@ -42,8 +42,15 @@
                     <p class="card-text">Layers of the finest pepperoni make this pizza a can't miss!</p>
                     <p class="card-text">$10.99</p>
 
-                    <a href="#" class="btn btn-primary">Add</a>
-                    <a href="#" class="btn btn-primary">Remove</a>
+                    <form action="/pizzas" method="POST">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                        <input type="hidden" name="name" value="Pepperoni">
+                        <input type="hidden" name="description" value="Layers of the finest pepperoni make this pizza a can't miss!">
+                        <input type="hidden" name="price" value="$10.99">
+                    </form>
+                    <form action="" method="">
+                        <button type="submit" class="btn btn-primary">Remove</button>
+                    </form>
 
                 </div>
 
@@ -60,8 +67,15 @@
                     <p class="card-text">Tomato, black olive, onion, bell pepper, mushroom, spinach & garlic.</p>
                     <p class="card-text">$10.99</p>
 
-                    <a href="#" class="btn btn-primary">Add</a>
-                    <a href="#" class="btn btn-primary">Remove</a>
+                    <form action="/pizzas" method="POST">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                        <input type="hidden" name="name" value="Garden Pizza">
+                        <input type="hidden" name="description" value="Tomato, black olive, onion, bell pepper, mushroom, spinach & garlic.">
+                        <input type="hidden" name="price" value="$10.99">
+                    </form>
+                    <form action="" method="">
+                        <button type="submit" class="btn btn-primary">Remove</button>
+                    </form>
 
                 </div>
 
@@ -78,8 +92,15 @@
                     <p class="card-text">Sausage, Pepperoni, Ground Beef, Chicken</p>
                     <p class="card-text">$12.99</p>
 
-                    <a href="#" class="btn btn-primary">Add</a>
-                    <a href="#" class="btn btn-primary">Remove</a>
+                    <form action="/pizzas" method="POST">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                        <input type="hidden" name="name" value="Meat Lovers">
+                        <input type="hidden" name="description" value="Sausage, Pepperoni, Ground Beef, Chicken">
+                        <input type="hidden" name="price" value="$12.99">
+                    </form>
+                    <form action="" method="">
+                        <button type="submit" class="btn btn-primary">Remove</button>
+                    </form>
 
                 </div>
 
