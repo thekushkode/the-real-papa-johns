@@ -1,30 +1,35 @@
 <%- include('partials/aux-start.ejs') %>
 
 <div>
-    <h1>Order Summary</h1>
+    <div class="d-flex">
+        <!-- <img src="images/the-real-papa-johns.gif" width=100px> -->
+        <h1>Order Summary</h1>
+    </div>
     <div>
         <% pizzas.forEach(pizza => { %>
             <h4><%= pizza.name %></h4>
             <h4><%= pizza.description %></h4>
-            <h4><%= pizza.price %></h4>
+            <h4 class="price"><%= pizza.price %></h4>
         <% }) %> 
     </div>
     <div>
         <% appetizers.forEach(app => { %>
             <h4><%= app.name %></h4>
             <h4><%= app.description %></h4>
-            <h4><%= app.price %></h4>
+            <h4 class="price"><%= app.price %></h4>
         <% }) %> 
     </div>
     <div>
         <% desserts.forEach(dessert => { %>
             <h4><%= dessert.name %></h4>
             <h4><%= dessert.description %></h4>
-            <h4><%= dessert.price %></h4>
+            <h4 class="price"><%= dessert.price %></h4>
         <% }) %> 
     </div>
     <hr>
-    <h3>Order Total:</h3>
+    <h3>Order Total:<span class="total"></span></h3>
 </div>
 
 <%- include('partials/page-end.ejs') %>
+<script src='/js/summary.js'></script>
+<%- include('partials/page-close.ejs') %>
