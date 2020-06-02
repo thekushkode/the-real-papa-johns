@@ -1,28 +1,65 @@
 <%- include('partials/aux-start.ejs') %>
+<div class="mt-4">
 
-<div class="row">
-    <% appetizer.forEach(item => { %>
+    <div class="row">
     
-    <div class="container d-flex col-12 col-sm-6 col-md-4 col-lg-4">
-        <div class="card">
-            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
-            <div class="card-body">
+        <div class="container justify-content-around d-flex col-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="card">
+                <img class="card-img-top" src="images/garlic_knots.jpeg" alt="Card image cap">
+                <div class="card-body">
     
-                
-                <h4 class="card-title"><a><%= item.item %></a></h4>
-                
-                <p class="card-text"><%= item.description %></p>
-                <p class="card-text">$<%= item.price %></p>
-                
-                <a href="#" class="btn btn-primary">Add</a>
-                <a href="#" class="btn btn-primary">Remove</a>
+    
+                    <h4 class="card-title"><a>Garlic Knots</a></h4>
+    
+                    <p class="card-text">Our delicious dough tied in a knot and covered in EVOO & Garlic. You're welcome!
+                    </p>
+                    <p class="card-text">$4.99</p>
+    
+                    <a href="#" class="btn btn-primary">Add</a>
+                    <a href="#" class="btn btn-primary">Remove</a>
+    
+                </div>
     
             </div>
-    
         </div>
-    </div>
+        <div class="container d-flex justify-content-around col-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="card">
+                <img class="card-img-top" src="images/cheese_bread.jpeg" alt="Card image cap">
+                <div class="card-body">
     
-    <% }) %>
+    
+                    <h4 class="card-title"><a>Cheesey Bread</a></h4>
+    
+                    <p class="card-text">You'll be in love at first bite with our dank ass cheesey bread!</p>
+                    <p class="card-text">$5.99</p>
+    
+                    <a href="#" class="btn btn-primary">Add</a>
+                    <a href="#" class="btn btn-primary">Remove</a>
+    
+                </div>
+    
+            </div>
+        </div>
+        <div class="container d-flex justify-content-around col-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="card">
+                <img class="card-img-top" src="images/boneless_wings.jpeg" alt="Card image cap">
+                <div class="card-body">
+    
+    
+                    <h4 class="card-title"><a>Boneless Wings</a></h4>
+    
+                    <p class="card-text">Juicy, tender chicken nuggets breaded and covered in our tangy buffalo sauce!</p>
+                    <p class="card-text">$6.99</p>
+    
+                    <a href="#" class="btn btn-primary">Add</a>
+                    <a href="#" class="btn btn-primary">Remove</a>
+    
+                </div>
+    
+            </div>
+        </div>
+    
+    </div>
 </div>
 
 
