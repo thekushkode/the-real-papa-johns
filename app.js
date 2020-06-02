@@ -34,20 +34,28 @@ app.get('/', (req, res) => {
     res.render('index.ejs');
 });
 
+// app.get('/appetizers', (req, res) => {
+//     db.Appetizers.findAll({attributes: ['item', 'description', 'price']}).then(appetizerList => {
+//         res.render('appetizers.ejs', {
+//             appetizer: appetizerList
+//         });
+//     });
+// });
+
 app.get('/appetizers', (req, res) => {
-    db.Appetizers.findAll({attributes: ['item', 'description', 'price']}).then(appetizerList => {
-        res.render('appetizers.ejs', {
-            appetizer: appetizerList
-        });
-    });
+    res.render('appetizers.ejs');
 });
 
 app.get('/desserts', (req, res) => {
     res.render('desserts.ejs');
-})
+});
 
 app.get('/pizzas', (req, res) => {
     res.render('pizzas.ejs');
-})
+});
+
+app.get('/login', (req, res) => {
+    res.render('login_logout.ejs');
+});
 
 app.listen(PORT, () => console.log(`Listening on: http://localhost:${PORT}`));
