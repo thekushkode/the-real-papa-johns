@@ -2,9 +2,9 @@
 module.exports = (sequelize, DataTypes) => {
   const Orders = sequelize.define('Orders', {
     customerId: DataTypes.INTEGER,
-    appetizer: DataTypes.INTEGER,
-    pizza: DataTypes.INTEGER,
-    dessert: DataTypes.INTEGER,
+    appetizers: DataTypes.INTEGER,
+    pizzas: DataTypes.INTEGER,
+    desserts: DataTypes.INTEGER,
     total: DataTypes.NUMERIC
   }, {});
   Orders.associate = function(models) {

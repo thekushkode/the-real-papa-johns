@@ -28,19 +28,26 @@ app.use(session({
     },
 }));
 
-
+db.Appetizers.sync();
 
 app.get('/', (req, res) => {
     res.render('index.ejs');
 });
 
 app.get('/appetizers', (req, res) => {
-    db.Appetizers.findAll ()
-                .then (appetizerList => {
-                    res.render('appetizers.ejs', {data:appetizerList});
-                });
+    db.Appetizers.findAll({attributes: ['item', 'description', 'price']}).then(appetizerList => {
+        res.render('appetizers.ejs', {
+            appetizer: appetizerList
+        });
+    });
 });
 
+app.get('/desserts', (req, res) => {
+    res.render('desserts.ejs');
+})
 
+app.get('/pizzas', (req, res) => {
+    res.render('pizzas.ejs');
+})
 
 app.listen(PORT, () => console.log(`Listening on: http://localhost:${PORT}`));

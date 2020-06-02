@@ -1,1 +1,97 @@
-/* Your custom styles */
+/* :root {
+    --papa-green: rgb(59, 133, 102);
+    --papa-red: rgb(189, 56, 59);
+    --background: #3b3b3b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url(https://www.moulinex.com.eg/medias/?context=bWFzdGVyfHJvb3R8MTQzNTExfGFwcGxpY2F0aW9uL29jdGV0LXN0cmVhbXxoNjIvaDE5LzEzMTExNzcxNTI5MjQ2LmJpbnw3NTkwMmNjYmFhZTUwZjYwNzk0ZmQyNjVmMjEzYjZiNGI3YzU1NGI3ZGNjYjM3YjYxZGY5Y2Y0ZTdjZmZkZmNj);
+    background-position: center;
+    background-size: cover;
+}
+
+.menu {
+    width: 20rem;
+    border-radius: 0.2rem;
+    overflow: hidden;
+}
+
+.menu a {
+    text-decoration: none;
+}
+
+.menu-item {
+    list-style: none;
+    border-top: 1px solid var(--papa-red);
+}
+
+.btn {
+    display: block;
+    padding: 1rem 1.2rem;
+    background: var(--papa-red);
+    color: white;
+    position: relative;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background: var(--blue);
+    left: 1.5rem;
+    bottom: -.5rem;
+    transform: rotate(45deg);
+}
+.btn i {
+    margin-right: 1rem;
+}
+
+.menu-item__sub {
+    background: var(--papa-green);
+    overflow: hidden;
+    transition: max-height 0.3s;
+    max-height: 0;
+}
+
+.menu-item__sub a {
+    display: block;
+    padding: 1rem 1.6rem;
+    color: white;
+    font-size: 0.9rem;
+    position: relative;
+    border-bottom: 1px solid var(--papa-green);
+}
+
+.menu-item:target .menu-item__sub {
+    max-height: 10em;
+}
+
+.menu-item__sub a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0.4rem;
+    height: 100%;
+    background: var(--papa-red);
+    transform: translateX(-0.4rem);
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.menu-item__sub a:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+} */

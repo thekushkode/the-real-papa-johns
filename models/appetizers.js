@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.NUMERIC
   }, {});
   Appetizers.associate = function(models) {
-    Appetizers.belongsTo(models.Orders, {foreignKey: 'appetizers'});
+    // Appetizers.belongsTo(models.Orders, {foreignKey: 'appetizers', as: 'appetizer'});
   };
   return Appetizers;
 };
