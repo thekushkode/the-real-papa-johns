@@ -5,7 +5,7 @@ Taking over the Papa Johns market share one day at a time!
 Robert Kushner IV\
 Tracey Sykes Jr
 
-**Featuring:**\
+**Featuring:**
 - Sequelize
 - Sessions
 - DataBases
