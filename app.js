@@ -84,15 +84,25 @@ app.get('/login', (req, res) => {
 });
 
 function findPrice(a, b) {
-    return parseFloat(a.price).toFixed(2) + parseFloat(b.price).toFixed(2);
+    console.log(a);
+    console.log(typeof a)
+    if (typeof a === 'object') {
+        return parseFloat(a.price) + parseFloat(b.price);
+    } else {
+        return a + parseFloat(b.price);
+    }
 }
 
 app.get('/summary', (req, res) => {
+    // let pieTotal = req.session.pizzas.reduce(findPrice);
+    // let appTotal =  req.session.appetizers.reduce(findPrice);
+    // let dezzTotal = req.session.desserts.reduce(findPrice);
+    // let orderTotal = pieTotal + appTotal + dezzTotal;
     res.render('order_summary.ejs', {
         pizzas: req.session.pizzas,
         desserts: req.session.desserts,
         appetizers: req.session.appetizers,
-        total: req.session.pizzas.reduce(findPrice, 0),
+        total: req.session.pizzas.reduce(findPrice),
     });
 });
 
