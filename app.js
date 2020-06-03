@@ -94,15 +94,16 @@ function findPrice(a, b) {
 }
 
 app.get('/summary', (req, res) => {
-    // let pieTotal = req.session.pizzas.reduce(findPrice);
-    // let appTotal =  req.session.appetizers.reduce(findPrice);
-    // let dezzTotal = req.session.desserts.reduce(findPrice);
-    // let orderTotal = pieTotal + appTotal + dezzTotal;
+    let pieTotal = req.session.pizzas.reduce(findPrice, 0);
+    let appTotal =  req.session.appetizers.reduce(findPrice, 0);
+    let dezzTotal = req.session.desserts.reduce(findPrice, 0);
+    let orderTotal = pieTotal + appTotal + dezzTotal;
+    console.log(orderTotal);
     res.render('order_summary.ejs', {
         pizzas: req.session.pizzas,
         desserts: req.session.desserts,
         appetizers: req.session.appetizers,
-        total: req.session.pizzas.reduce(findPrice),
+        total: orderTotal,
     });
 });
 
@@ -141,14 +142,14 @@ app.post('/signup', (req, res) => {
 });
 
 //sign-in post route
-app.post('/signup', (req, res) => {
+app.post('/signin', (req, res) => {
     const { email, password } = req.body;
     db.Users.findOne({
         where: { email }
     }).then((User) => {
         bcrypt.compare(password, User.password, (err, match) => {
             if (match) {
-                res.render('/')
+                res.redirect('/')
             } else {
                 res.send("Incorrect Password")
             }
