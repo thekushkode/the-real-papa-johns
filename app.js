@@ -92,19 +92,43 @@ app.get('/summary', (req, res) => {
     req.session.destroy();
 });
 
+//sign-up post route
 app.post('/signup', (req, res) => {
-    db.Users.create({
-        name: req.body.name,
-        email: req.body.email,
-        address: req.body.address,
-        phone: req.body.phone,
-        ccNum: req.body.ccNum,
-        ccExp: req.body.ccExp,
-        ccCode: req.body.ccCode,
-        password: req.body.password
-    }).then(user => {
-        console.log(user);
+    const { name, email, address, phone, ccNum, ccCode, password } = req.body;
+    bcrypt.hash(password, 10, (err, hash) => {
+        db.Users.create({
+            name: req.body.name,
+            email: req.body.email,
+            address: req.body.address,
+            phone: req.body.phone,
+            ccNum: req.body.ccNum,
+            ccExp: req.body.ccExp,
+            ccCode: req.body.ccCode,
+            password: hash,
+        })
+            .then((result) => {
+                res.redirect('/');
+            });
     });
+});
+
+//sign-in post route
+app.post('/signup', (req, res) => {
+    const { email, password } = req.body;
+    db.Users.findOne({
+        where: { email }
+    }).then((User) => {
+        bcrypt.compare(password, User.password, (err, match) => {
+            if (match) {
+                res.render('/')
+            } else {
+                res.send("Incorrect Password")
+            }
+        });
+    })
+        .catch(() => {
+            res.send('User Not Found!')
+        });
 });
 
 app.post('/summary', (req, res) => {
