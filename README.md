@@ -6,11 +6,11 @@ Robert Kushner IV\
 Tracey Sykes Jr
 
 **Featuring:**\
--Sequelize
--Sessions
--DataBases
--BCRYPT
--EJS
--and more!
+- Sequelize
+- Sessions
+- DataBases
+- BCRYPT
+- EJS
+- and more!
 
 ![The Real Papa Johns](papajohnsREADME.gif)
