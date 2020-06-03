@@ -35,7 +35,6 @@ app.use(session({
 }));
 store.sync();
 
-
 app.get('/', (req, res) => {
     res.render('index.ejs');
 });
@@ -90,6 +89,7 @@ app.get('/summary', (req, res) => {
         desserts: req.session.desserts,
         appetizers: req.session.appetizers,
     });
+    req.session.destroy();
 });
 
 app.post('/signup', (req, res) => {
