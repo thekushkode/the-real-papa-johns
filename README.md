@@ -6,6 +6,7 @@ Robert Kushner IV\
 Tracey Sykes Jr
 
 **Featuring:**
+- Responsive Design
 - Sequelize
 - Sessions
 - DataBases
