@@ -83,13 +83,31 @@ app.get('/login', (req, res) => {
     res.render('login_logout.ejs');
 });
 
+function findPrice(a, b) {
+    return parseFloat(a.price).toFixed(2) + parseFloat(b.price).toFixed(2);
+}
+
 app.get('/summary', (req, res) => {
     res.render('order_summary.ejs', {
         pizzas: req.session.pizzas,
         desserts: req.session.desserts,
         appetizers: req.session.appetizers,
+        total: req.session.pizzas.reduce(findPrice, 0),
     });
-    req.session.destroy();
+});
+
+// GET /logout
+app.get('/logout', function (req, res, next) {
+    if (req.session) {
+        // delete session object
+        req.session.destroy(function (err) {
+            if (err) {
+                return next(err);
+            } else {
+                return res.render('logout.ejs');
+            }
+        });
+    }
 });
 
 //sign-up post route

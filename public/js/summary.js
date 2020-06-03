@@ -5,7 +5,7 @@
 
 let total = 0;
 $('.price').each(function(){
-    total += $(this).text();  // Or this.innerHTML, this.innerText
+    total += parseFloat($(this).text()).toFixed(2);  // Or this.innerHTML, this.innerText
 });
 
 console.log(total);
