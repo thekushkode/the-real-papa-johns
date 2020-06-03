@@ -1,1 +1,1 @@
-![alt text](http://example.com/exampl.png)
+![alt text](images/papajohnsREADME.gif)
