@@ -1,1 +1,1 @@
-![alt text](images/papajohnsREADME.gif)
+![alt text](/images/papajohnsREADME.gif)
