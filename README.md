@@ -12,6 +12,7 @@ Tracey Sykes Jr
 - DataBases
 - BCRYPT
 - EJS
+- Body & Cookie Parsers
 - and more!
 
 ![The Real Papa Johns](papajohnsREADME.gif)
